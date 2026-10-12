@@ -1,0 +1,2 @@
+# Preserve captured bytes so result.json hashes work on all checkout platforms.
+* -text -whitespace

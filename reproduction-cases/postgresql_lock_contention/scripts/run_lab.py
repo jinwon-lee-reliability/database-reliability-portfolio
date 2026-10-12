@@ -241,7 +241,7 @@ class Lab:
                 try:
                     if proc.poll() is None:
                         proc.communicate(input="ROLLBACK;\n\\q\n", timeout=5)
-                except (subprocess.TimeoutExpired, BrokenPipeError, OSError):
+                except (subprocess.TimeoutExpired, BrokenPipeError, OSError, ValueError):
                     proc.kill()
                     proc.wait(timeout=5)
                 finally:

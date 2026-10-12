@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-12T04:16:56.749656+00:00",
+  "project": "pg-lock-rca-507926fdb5c6",
+  "scope": "synthetic independent lab",
+  "source_commit": "60567322063f788a253a171e662d5b44a8a40c67",
+  "ci_run_id": "38203138252",
+  "assertions": [
+    {
+      "name": "PostgreSQL major version is 17",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:14.549644+00:00"
+    },
+    {
+      "name": "waiter waits on transactionid held by idle-in-transaction blocker",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:14.903694+00:00"
+    },
+    {
+      "name": "captured graph identifies exactly one scenario blocker",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:15.320415+00:00"
+    },
+    {
+      "name": "pg_locks correlates ungranted ShareLock with granted transaction ExclusiveLock",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:15.425910+00:00"
+    },
+    {
+      "name": "server emitted lock-wait evidence",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:15.658165+00:00"
+    },
+    {
+      "name": "ordinary SELECT sees committed 1000 while UPDATE is blocked",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:15.757643+00:00"
+    },
+    {
+      "name": "independent row update completes",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:15.857045+00:00"
+    },
+    {
+      "name": "lock_timeout produces SQLSTATE 55P03",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:16.957450+00:00"
+    },
+    {
+      "name": "timeout does not release the original blocking transaction",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:17.059770+00:00"
+    },
+    {
+      "name": "owner ROLLBACK exits cleanly",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:17.067117+00:00"
+    },
+    {
+      "name": "waiter completes and commits after rollback",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:17.074455+00:00"
+    },
+    {
+      "name": "rolled-back blocker is discarded; only waiter decrement persists",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:17.178799+00:00"
+    },
+    {
+      "name": "recovered graph has no blocked waiter",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:17.604741+00:00"
+    },
+    {
+      "name": "short transaction with local timeouts completes",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:17.807229+00:00"
+    },
+    {
+      "name": "scenario sessions and lock waits are gone",
+      "passed": true,
+      "captured_at_utc": "2026-10-12T04:17:17.910654+00:00"
+    }
+  ],
+  "postgres_image": {
+    "id": "sha256:589f742565e4f6d22149176b032974f55f8201a8a37b71ed587ec5c6902e689f",
+    "repo_digests": [
+      "postgres@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    ]
+  },
+  "final_balances": {
+    "1": 980,
+    "2": 1001
+  },
+  "cleanup_passed": true,
+  "ended_at_utc": "2026-10-12T04:17:18.456709+00:00",
+  "files_sha256": {
+    "after-recovery-activity.txt": "7f1cf42255094bb4e8d3f114de5818e659a00fb924660876699273645e391620",
+    "after-recovery-blocking.txt": "aafe89e97f515e6d06838af4f39ff726d9b5f0cea3f9789ddf9b7084bb98ed89",
+    "after-recovery-graph.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "after-recovery-locks.txt": "bd0e055c64d91be7e7065e27f9b06715c93936f1b3b677c13d511372e0dbc353",
+    "before-recovery-activity.txt": "88ad82aa7e43865c63f4d611a72696411447f854403bb3fab090dc5feaeafbd7",
+    "before-recovery-blocking.txt": "5dc20b05070ea01f793da1849df926c98409ec4360093f4337bc46dd94cbe3b6",
+    "before-recovery-graph.json": "50560961604af4529762e2242520a44e3064c23199c2b04e64177b97ae309ed0",
+    "before-recovery-locks.txt": "3e076c5343a87a9166b59383a68a7fa9cdf4060dc0737ca4a12dc9f54d6e0089",
+    "before-recovery-server.log": "0bba534604bf8100aa9b18653636afd7fe6909a6501fe241c86f9e20b5e6e678",
+    "blocker-session.txt": "76b84d4652a721eefa07441c62707a4c198447f3d24dded57828f869f3c44546",
+    "cleanup.txt": "5a0dd019fa34bbaeb0be7bc2341e7a059c29fbb2a3d555bf3005baa26a31bf12",
+    "compose-resolved.yaml": "81d88c5af2bfc2793679a81951860e55e5f7eb74246db18567489b54335ddd64",
+    "environment.txt": "d62b6787a636ff0e49443ef57457c49cfa184b2592cb703f64d8f6132fa9b2eb",
+    "final-verification.txt": "c91a153ee6917e54cd8ca443c5f504179217b9c8b29a09e550ade67334c1d246",
+    "image.json": "7d4a39bca61bc7c7019a3e696f1d3312817f540462e789a4cf7875994ef4130c",
+    "independent-row.txt": "d6a1a767319c3bf2a337b16e3a14916f63e432872e0f8df1cb73b32a8b338ae4",
+    "lock-timeout.txt": "dfc75d87b865a9ef0cd926d053bcfdb55364e06c6d08d8130a66dafa2493e4f6",
+    "mvcc-read.txt": "83c02ac2d48c863dab2ccf6870455aadfc2cec073b8db269b517c879d76aa6d9",
+    "postgres-settings.txt": "f365a730fda4b7725cc64830cbfe12a36d5a93735da1656ab324bdec4c749170",
+    "server.log": "37c785e7af6e394f2c4f79d9682650d7a8054f570333cfdc2b938b59313e9198",
+    "setup.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "short-transaction.txt": "d5c1b50325dbff95f42ec2ad3a945b783aff0ff8e5c65ff5813374116f234d89",
+    "waiter-session.txt": "d296279c552d71b6eeaaf72dfd98e1d994f77e7c561fe2fe35f68addc91536c8"
+  }
+}

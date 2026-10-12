@@ -30,9 +30,11 @@ an SLA breach, throughput, or a production outage.
 - All connections run through `docker compose exec`; no host database port is published.
 - `log_lock_waits=on`, `deadlock_timeout=500ms`, UTC logs, PID/application log prefix.
   The short diagnostic threshold is a lab setting, not a production recommendation.
-- Default image tag `postgres:17-bookworm` receives updates. The runner records the
-  actual version, image ID, and repository digest. To repeat with identical image
-  bytes, set `PG_IMAGE` to the captured `postgres@sha256:...` digest before running.
+- The default image is pinned to the immutable digest captured from the successful
+  PostgreSQL 17.11 / Bookworm CI run. The runner records the actual version, image
+  ID, and repository digest. Set `PG_IMAGE` to another reviewed `postgres@sha256:...`
+  digest to evaluate an update; overrides such as `postgres:17-bookworm` follow a
+  moving tag and should be resolved back to a digest for repeatable evidence.
   Major-version overrides other than 17 deliberately fail the version check.
 - Credentials are disposable demo values and the `lab` role is a superuser for
   observability. Production access should follow least privilege; cross-role
@@ -117,7 +119,7 @@ statement timeout. If the timeout fires, rerun B while A is still holding the lo
 **Terminal C — observe and capture** (PowerShell or a POSIX shell):
 
 ```text
-mkdir artifacts/manual
+python -c "from pathlib import Path; Path('artifacts/manual').mkdir(parents=True, exist_ok=False)"
 docker compose exec -T postgres psql -X -U lab -d lock_lab -v ON_ERROR_STOP=1 -P pager=off -f /lab/sql/03_activity.sql > artifacts/manual/activity.txt
 docker compose exec -T postgres psql -X -U lab -d lock_lab -v ON_ERROR_STOP=1 -P pager=off -f /lab/sql/04_locks.sql > artifacts/manual/locks.txt
 docker compose exec -T postgres psql -X -U lab -d lock_lab -v ON_ERROR_STOP=1 -P pager=off -f /lab/sql/05_blocking_graph.sql > artifacts/manual/blocking.txt
@@ -222,6 +224,9 @@ in CI, exit status, cleanup status, and SHA-256 hashes for captured files.
 `artifacts/` is ignored to prevent automatic publication of future captures.
 This lab's generated evidence is synthetic; review any external evidence before
 publishing it. There is no dependency on customer access or PoC execution.
+
+The reviewed [2026-10-12 CI evidence snapshot](evidence/2026-10-12-ci/README.md)
+preserves the actual successful run in Git, independently of CI artifact expiry.
 
 ## Separate follow-up
 
