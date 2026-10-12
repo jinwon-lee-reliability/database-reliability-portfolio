@@ -98,6 +98,20 @@ This lab demonstrates how I apply my existing database-support experience to a n
 
 ## Repositories and Content
 
+### PostgreSQL Lock Contention RCA Lab
+
+[Reproducible synthetic RCA lab](reproduction-cases/postgresql_lock_contention/README.md)
+with a Docker PostgreSQL environment, blocked/blocker SQL, `pg_stat_activity`,
+`pg_locks`, `pg_blocking_pids`, evidence capture, rollback recovery, timeout
+prevention, and automated integration checks. See its
+[validation record](reproduction-cases/postgresql_lock_contention/VALIDATION.md)
+for execution status. This is independent lab work; as of 2026-10-12, OpenSQL
+customer PoC participation is authorized and handover is pending. No customer
+PoC execution or production PostgreSQL accomplishment is claimed.
+
+[Patroni / etcd HA and Failover](reproduction-cases/postgresql_lock_contention/FOLLOW_UP_HA.md)
+is planned as a separate follow-up stage.
+
 ### `case-studies`
 
 Documented production incidents, investigation processes, technical decisions, customer impact, and lessons learned.
