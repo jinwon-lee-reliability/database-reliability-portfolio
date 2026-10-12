@@ -1,0 +1,4 @@
+ captured_at_utc | pid | backend_start | application_name | usename | state | transaction_age | query_age | wait_event_type | wait_event | blocking_pids | query 
+-----------------+-----+---------------+------------------+---------+-------+-----------------+-----------+-----------------+------------+---------------+-------
+(0 rows)
+

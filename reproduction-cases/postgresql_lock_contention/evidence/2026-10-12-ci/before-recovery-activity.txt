@@ -1,0 +1,7 @@
+        captured_at_utc        | pid |         backend_start         | application_name | usename |        state        | transaction_age |    query_age    | wait_event_type |  wait_event   | blocking_pids |                               query                               
+-------------------------------+-----+-------------------------------+------------------+---------+---------------------+-----------------+-----------------+-----------------+---------------+---------------+-------------------------------------------------------------------
+ 2026-10-12 04:17:15.002206+00 | 116 | 2026-10-12 04:17:14.66139+00  | lab_blocker      | lab     | idle in transaction | 00:00:00.339395 | 00:00:00.33873  | Client          | ClientRead    | {}            | SELECT pg_backend_pid() AS blocker_pid;
+ 2026-10-12 04:17:15.002221+00 | 130 | 2026-10-12 04:17:14.790003+00 | lab_waiter       | lab     | active              | 00:00:00.210906 | 00:00:00.210857 | Lock            | transactionid | {116}         | UPDATE lock_demo.accounts SET balance = balance - 10 WHERE id = 1+
+                               |     |                               |                  |         |                     |                 |                 |                 |               |               | RETURNING id, balance;
+(2 rows)
+
