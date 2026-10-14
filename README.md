@@ -122,6 +122,18 @@ Scripts and repeatable workflows for diagnostics, log collection, evidence organ
 
 Earlier troubleshooting and failure-testing experiments retained for reference.
 
+### OpenSQL Lab ? Evidence v0.1
+
+[Single-node installation and DCS endpoint migration](opensql-lab/README.md)
+documents operator-executed desktop lab work: Windows/Hyper-V repair,
+Rocky Linux VM setup, installation prerequisites, and etcd snapshot,
+endpoint migration, health, and member-identity checks.
+Patroni DCS recovery remains **IN PROGRESS**.
+See the [evidence ledger](opensql-lab/EVIDENCE.md) for provenance and limits,
+and the [v0.2 plan](opensql-lab/FOLLOW_UP.md) for outstanding validation.
+This is personal lab experience; independent upstream-only reproduction
+has **NOT BEEN EXECUTED**.
+
 ## Current Career Direction
 
 I am pursuing remote and international opportunities including:
