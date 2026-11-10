@@ -110,6 +110,12 @@ A structured framework for designing and documenting database failure, recovery,
 
 Reproduction scenarios used to isolate database, operating-system, storage, network, SQL, and workload-related behavior.
 
+### Supabase Support Lab — Auth and RLS RCA
+
+[Auth, Data API, and PostgreSQL RLS incident walkthrough](supabase-support-lab/auth-rls-rca-01/README.md)
+from an independent Supabase Cloud lab. Covers privilege errors, JWT expiry,
+row visibility, and two-user recovery validation.
+
 ### `postgresql-timescaledb-lab`
 
 PostgreSQL and Tiger Data / TimescaleDB hands-on exercises covering hypertables, chunks, execution plans, Hypercore, compression, and continuous aggregates.
