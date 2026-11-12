@@ -1,0 +1,10 @@
+ id | balance |             note              
+----+---------+-------------------------------
+  1 |     980 | synthetic hot account
+  2 |    1001 | synthetic independent account
+(2 rows)
+
+ pid | application_name | state | blocking_pids 
+-----+------------------+-------+---------------
+(0 rows)
+

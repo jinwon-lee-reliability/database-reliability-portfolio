@@ -1,0 +1,6 @@
+ Container pg-lock-rca-507926fdb5c6-postgres-1  Stopping
+ Container pg-lock-rca-507926fdb5c6-postgres-1  Stopped
+ Container pg-lock-rca-507926fdb5c6-postgres-1  Removing
+ Container pg-lock-rca-507926fdb5c6-postgres-1  Removed
+ Network pg-lock-rca-507926fdb5c6_default  Removing
+ Network pg-lock-rca-507926fdb5c6_default  Removed

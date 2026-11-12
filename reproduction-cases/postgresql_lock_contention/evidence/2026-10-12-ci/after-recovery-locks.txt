@@ -1,0 +1,4 @@
+ captured_at_utc | pid | application_name | state | locktype | mode | granted | relation | transactionid | virtualxid | page | tuple | waitstart 
+-----------------+-----+------------------+-------+----------+------+---------+----------+---------------+------------+------+-------+-----------
+(0 rows)
+

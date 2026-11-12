@@ -1,0 +1,40 @@
+name: pg-lock-rca-507926fdb5c6
+services:
+  postgres:
+    command:
+      - postgres
+      - -c
+      - log_lock_waits=on
+      - -c
+      - deadlock_timeout=500ms
+      - -c
+      - 'log_line_prefix=%m [%p] %a %u@%d '
+      - -c
+      - log_timezone=UTC
+      - -c
+      - timezone=UTC
+    environment:
+      POSTGRES_DB: lock_lab
+      POSTGRES_PASSWORD: synthetic-demo-only
+      POSTGRES_USER: lab
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U lab -d lock_lab
+      timeout: 3s
+      interval: 2s
+      retries: 30
+    image: postgres:17-bookworm
+    networks:
+      default: null
+    stop_grace_period: 10s
+    volumes:
+      - type: bind
+        source: /home/runner/work/database-reliability-portfolio/database-reliability-portfolio/reproduction-cases/postgresql_lock_contention/sql
+        target: /lab/sql
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: pg-lock-rca-507926fdb5c6_default

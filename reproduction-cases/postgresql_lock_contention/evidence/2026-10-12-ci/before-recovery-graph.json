@@ -1,0 +1,14 @@
+[
+  {
+    "waiter_pid": 130,
+    "waiter_state": "active",
+    "wait_event_type": "Lock",
+    "wait_event": "transactionid",
+    "blocker_pid": 116,
+    "blocker_state": "idle in transaction",
+    "waiter_application": "lab_waiter",
+    "blocker_application": "lab_blocker",
+    "blocker_xact_start": "2026-10-12T04:17:14.662812+00:00",
+    "captured_at_utc": "2026-10-12T04:17:15.315626+00:00"
+  }
+]

@@ -1,0 +1,14 @@
+        captured_at_utc        | pid | application_name |        state        |   locktype    |       mode       | granted |        relation         | transactionid | virtualxid | page | tuple |           waitstart           
+-------------------------------+-----+------------------+---------------------+---------------+------------------+---------+-------------------------+---------------+------------+------+-------+-------------------------------
+ 2026-10-12 04:17:15.105223+00 | 130 | lab_waiter       | active              | transactionid | ShareLock        | f       |                         |           744 |            |      |       | 2026-10-12 04:17:14.791845+00
+ 2026-10-12 04:17:15.105231+00 | 116 | lab_blocker      | idle in transaction | relation      | RowExclusiveLock | t       | lock_demo.accounts      |               |            |      |       | 
+ 2026-10-12 04:17:15.105252+00 | 116 | lab_blocker      | idle in transaction | relation      | RowExclusiveLock | t       | lock_demo.accounts_pkey |               |            |      |       | 
+ 2026-10-12 04:17:15.105255+00 | 116 | lab_blocker      | idle in transaction | transactionid | ExclusiveLock    | t       |                         |           744 |            |      |       | 
+ 2026-10-12 04:17:15.105255+00 | 116 | lab_blocker      | idle in transaction | virtualxid    | ExclusiveLock    | t       |                         |               | 5/5        |      |       | 
+ 2026-10-12 04:17:15.105256+00 | 130 | lab_waiter       | active              | relation      | RowExclusiveLock | t       | lock_demo.accounts      |               |            |      |       | 
+ 2026-10-12 04:17:15.105257+00 | 130 | lab_waiter       | active              | relation      | RowExclusiveLock | t       | lock_demo.accounts_pkey |               |            |      |       | 
+ 2026-10-12 04:17:15.105257+00 | 130 | lab_waiter       | active              | transactionid | ExclusiveLock    | t       |                         |           745 |            |      |       | 
+ 2026-10-12 04:17:15.105258+00 | 130 | lab_waiter       | active              | tuple         | ExclusiveLock    | t       | lock_demo.accounts      |               |            |    0 |     1 | 
+ 2026-10-12 04:17:15.105259+00 | 130 | lab_waiter       | active              | virtualxid    | ExclusiveLock    | t       |                         |               | 7/3        |      |       | 
+(10 rows)
+

@@ -1,0 +1,31 @@
+name: pg-lock-rca
+
+services:
+  postgres:
+    # Immutable digest captured from the successful PostgreSQL 17.11 CI run.
+    image: ${PG_IMAGE:-postgres@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826}
+    environment:
+      POSTGRES_USER: lab
+      POSTGRES_PASSWORD: synthetic-demo-only
+      POSTGRES_DB: lock_lab
+    # No host port. All access uses docker compose exec in this disposable lab.
+    volumes:
+      - ./sql:/lab/sql:ro
+    command:
+      - postgres
+      - -c
+      - log_lock_waits=on
+      - -c
+      - deadlock_timeout=500ms
+      - -c
+      - 'log_line_prefix=%m [%p] %a %u@%d '
+      - -c
+      - log_timezone=UTC
+      - -c
+      - timezone=UTC
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U lab -d lock_lab]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    stop_grace_period: 10s

@@ -1,0 +1,4 @@
+ captured_at_utc | waiter_pid | waiter_application | wait_event_type | wait_event | blocker_pid | blocker_application | blocker_state | blocker_transaction_age | waiting_query | blocker_last_query 
+-----------------+------------+--------------------+-----------------+------------+-------------+---------------------+---------------+-------------------------+---------------+--------------------
+(0 rows)
+

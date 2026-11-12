@@ -1,0 +1,70 @@
+postgres-1  | 2026-10-12T04:17:11.438844029Z The files belonging to this database system will be owned by user "postgres".
+postgres-1  | 2026-10-12T04:17:11.438893479Z This user must also own the server process.
+postgres-1  | 2026-10-12T04:17:11.438897736Z 
+postgres-1  | 2026-10-12T04:17:11.438903155Z The database cluster will be initialized with locale "en_US.utf8".
+postgres-1  | 2026-10-12T04:17:11.438906210Z The default database encoding has accordingly been set to "UTF8".
+postgres-1  | 2026-10-12T04:17:11.438908995Z The default text search configuration will be set to "english".
+postgres-1  | 2026-10-12T04:17:11.438911879Z 
+postgres-1  | 2026-10-12T04:17:11.438914594Z Data page checksums are disabled.
+postgres-1  | 2026-10-12T04:17:11.438917869Z 
+postgres-1  | 2026-10-12T04:17:11.438960283Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres-1  | 2026-10-12T04:17:11.439560380Z creating subdirectories ... ok
+postgres-1  | 2026-10-12T04:17:11.439713458Z selecting dynamic shared memory implementation ... posix
+postgres-1  | 2026-10-12T04:17:11.452279758Z selecting default "max_connections" ... 100
+postgres-1  | 2026-10-12T04:17:11.469300165Z selecting default "shared_buffers" ... 128MB
+postgres-1  | 2026-10-12T04:17:11.495961622Z selecting default time zone ... Etc/UTC
+postgres-1  | 2026-10-12T04:17:11.496458076Z creating configuration files ... ok
+postgres-1  | 2026-10-12T04:17:11.591247696Z running bootstrap script ... ok
+postgres-1  | 2026-10-12T04:17:11.840524118Z performing post-bootstrap initialization ... ok
+postgres-1  | 2026-10-12T04:17:12.210650665Z syncing data to disk ... ok
+postgres-1  | 2026-10-12T04:17:12.210673489Z 
+postgres-1  | 2026-10-12T04:17:12.210676553Z 
+postgres-1  | 2026-10-12T04:17:12.210678967Z Success. You can now start the database server using:
+postgres-1  | 2026-10-12T04:17:12.210681531Z 
+postgres-1  | 2026-10-12T04:17:12.210648992Z initdb: warning: enabling "trust" authentication for local connections
+postgres-1  | 2026-10-12T04:17:12.210683774Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres-1  | 2026-10-12T04:17:12.210687319Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres-1  | 2026-10-12T04:17:12.210689433Z 
+postgres-1  | 2026-10-12T04:17:12.247164412Z waiting for server to start....2026-10-12 04:17:12.247 UTC [48]  @ LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+postgres-1  | 2026-10-12T04:17:12.247538188Z 2026-10-12 04:17:12.247 UTC [48]  @ LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2026-10-12T04:17:12.249551790Z 2026-10-12 04:17:12.249 UTC [51]  @ LOG:  database system was shut down at 2026-10-12 04:17:11 UTC
+postgres-1  | 2026-10-12T04:17:12.253030256Z 2026-10-12 04:17:12.252 UTC [48]  @ LOG:  database system is ready to accept connections
+postgres-1  | 2026-10-12T04:17:12.330724155Z  done
+postgres-1  | 2026-10-12T04:17:12.330751806Z server started
+postgres-1  | 2026-10-12T04:17:12.424817764Z CREATE DATABASE
+postgres-1  | 2026-10-12T04:17:12.425544155Z 
+postgres-1  | 2026-10-12T04:17:12.426022397Z 
+postgres-1  | 2026-10-12T04:17:12.426030118Z /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres-1  | 2026-10-12T04:17:12.426033613Z 
+postgres-1  | 2026-10-12T04:17:12.426747205Z waiting for server to shut down...2026-10-12 04:17:12.426 UTC [48]  @ LOG:  received fast shutdown request
+postgres-1  | 2026-10-12T04:17:12.446475819Z .2026-10-12 04:17:12.446 UTC [48]  @ LOG:  aborting any active transactions
+postgres-1  | 2026-10-12T04:17:12.448604251Z 2026-10-12 04:17:12.448 UTC [48]  @ LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+postgres-1  | 2026-10-12T04:17:12.448717099Z 2026-10-12 04:17:12.448 UTC [49]  @ LOG:  shutting down
+postgres-1  | 2026-10-12T04:17:12.448961413Z 2026-10-12 04:17:12.448 UTC [49]  @ LOG:  checkpoint starting: shutdown immediate
+postgres-1  | 2026-10-12T04:17:12.540505849Z 2026-10-12 04:17:12.540 UTC [49]  @ LOG:  checkpoint complete: wrote 921 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.074 s, sync=0.017 s, total=0.092 s; sync files=301, longest=0.009 s, average=0.001 s; distance=4238 kB, estimate=4238 kB; lsn=0/190A9C0, redo lsn=0/190A9C0
+postgres-1  | 2026-10-12T04:17:12.546531170Z 2026-10-12 04:17:12.546 UTC [48]  @ LOG:  database system is shut down
+postgres-1  | 2026-10-12T04:17:12.627069987Z  done
+postgres-1  | 2026-10-12T04:17:12.627099551Z server stopped
+postgres-1  | 2026-10-12T04:17:12.628095558Z 
+postgres-1  | 2026-10-12T04:17:12.628107686Z PostgreSQL init process complete; ready for start up.
+postgres-1  | 2026-10-12T04:17:12.628110340Z 
+postgres-1  | 2026-10-12T04:17:12.660514257Z 2026-10-12 04:17:12.660 UTC [1]  @ LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+postgres-1  | 2026-10-12T04:17:12.660663589Z 2026-10-12 04:17:12.660 UTC [1]  @ LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1  | 2026-10-12T04:17:12.660668566Z 2026-10-12 04:17:12.660 UTC [1]  @ LOG:  listening on IPv6 address "::", port 5432
+postgres-1  | 2026-10-12T04:17:12.661335499Z 2026-10-12 04:17:12.661 UTC [1]  @ LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2026-10-12T04:17:12.663509138Z 2026-10-12 04:17:12.663 UTC [64]  @ LOG:  database system was shut down at 2026-10-12 04:17:12 UTC
+postgres-1  | 2026-10-12T04:17:12.667038340Z 2026-10-12 04:17:12.666 UTC [1]  @ LOG:  database system is ready to accept connections
+postgres-1  | 2026-10-12T04:17:15.292012891Z 2026-10-12 04:17:15.291 UTC [130] lab_waiter lab@lock_lab LOG:  process 130 still waiting for ShareLock on transaction 744 after 500.071 ms
+postgres-1  | 2026-10-12T04:17:15.292035614Z 2026-10-12 04:17:15.291 UTC [130] lab_waiter lab@lock_lab DETAIL:  Process holding the lock: 116. Wait queue: 130.
+postgres-1  | 2026-10-12T04:17:15.292039370Z 2026-10-12 04:17:15.291 UTC [130] lab_waiter lab@lock_lab CONTEXT:  while updating tuple (0,1) in relation "accounts"
+postgres-1  | 2026-10-12T04:17:15.292042965Z 2026-10-12 04:17:15.291 UTC [130] lab_waiter lab@lock_lab STATEMENT:  UPDATE lock_demo.accounts SET balance = balance - 10 WHERE id = 1
+postgres-1  | 2026-10-12T04:17:15.292045980Z 	RETURNING id, balance;
+postgres-1  | 2026-10-12T04:17:16.453093949Z 2026-10-12 04:17:16.452 UTC [202] lab_timeout lab@lock_lab LOG:  process 202 still waiting for ExclusiveLock on tuple (0,1) of relation 16386 of database 16384 after 500.129 ms
+postgres-1  | 2026-10-12T04:17:16.453142922Z 2026-10-12 04:17:16.452 UTC [202] lab_timeout lab@lock_lab DETAIL:  Process holding the lock: 130. Wait queue: 202.
+postgres-1  | 2026-10-12T04:17:16.453145936Z 2026-10-12 04:17:16.452 UTC [202] lab_timeout lab@lock_lab STATEMENT:  UPDATE lock_demo.accounts SET balance = balance - 10 WHERE id = 1;
+postgres-1  | 2026-10-12T04:17:16.953771459Z 2026-10-12 04:17:16.952 UTC [202] lab_timeout lab@lock_lab ERROR:  canceling statement due to lock timeout
+postgres-1  | 2026-10-12T04:17:16.953800792Z 2026-10-12 04:17:16.952 UTC [202] lab_timeout lab@lock_lab STATEMENT:  UPDATE lock_demo.accounts SET balance = balance - 10 WHERE id = 1;
+postgres-1  | 2026-10-12T04:17:17.060387382Z 2026-10-12 04:17:17.060 UTC [130] lab_waiter lab@lock_lab LOG:  process 130 acquired ShareLock on transaction 744 after 2268.283 ms
+postgres-1  | 2026-10-12T04:17:17.060413290Z 2026-10-12 04:17:17.060 UTC [130] lab_waiter lab@lock_lab CONTEXT:  while updating tuple (0,1) in relation "accounts"
+postgres-1  | 2026-10-12T04:17:17.060417426Z 2026-10-12 04:17:17.060 UTC [130] lab_waiter lab@lock_lab STATEMENT:  UPDATE lock_demo.accounts SET balance = balance - 10 WHERE id = 1
+postgres-1  | 2026-10-12T04:17:17.060420581Z 	RETURNING id, balance;

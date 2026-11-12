@@ -1,0 +1,38 @@
+name: PostgreSQL Lock Contention RCA
+
+on:
+  push:
+    paths:
+      - 'reproduction-cases/postgresql_lock_contention/**'
+      - '.github/workflows/postgresql-lock-rca.yml'
+  pull_request:
+    paths:
+      - 'reproduction-cases/postgresql_lock_contention/**'
+      - '.github/workflows/postgresql-lock-rca.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Compose configuration and Python syntax
+        working-directory: reproduction-cases/postgresql_lock_contention
+        run: |
+          docker compose config --quiet
+          python3 -m py_compile scripts/run_lab.py
+      - name: Reproduce, capture evidence, recover, and verify prevention
+        working-directory: reproduction-cases/postgresql_lock_contention
+        run: python3 scripts/run_lab.py
+      - name: Upload evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: postgresql-lock-rca-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reproduction-cases/postgresql_lock_contention/artifacts/
+          if-no-files-found: error
+          retention-days: 30
