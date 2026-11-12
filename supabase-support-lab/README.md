@@ -2,6 +2,12 @@
 
 I used a personal Supabase Cloud lab with synthetic users and tickets to investigate Auth and the Data API, compare Supavisor connection modes, and trace PostgreSQL session and lock behavior. **Verified** refers to an observation I made during the lab. The procedures below show how to repeat the diagnostic checks. They are separate from the recorded results.
 
+## Additional Lab Evidence
+
+- [MVCC, VACUUM, and WAL on Supabase Cloud](mvcc-vacuum-wal/README.md)
+- [Table restore failure and recovery on local OpenSQL](../opensql-lab/migration-failure-recovery/README.md)
+- [OpenSQL recovery after reboot](../opensql-lab/restart-recovery/README.md)
+
 ## Observations
 
 | Area | Status | Recorded result |
