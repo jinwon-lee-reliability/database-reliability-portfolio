@@ -116,6 +116,8 @@ Reproduction scenarios used to isolate database, operating-system, storage, netw
 from an independent Supabase Cloud lab. Covers privilege errors, JWT expiry,
 row visibility, and two-user recovery validation.
 
+[Supabase Database Support hands-on evidence](supabase-support-lab/README.md) covers Supavisor and PostgreSQL diagnostics alongside the Auth and RLS lab.
+
 ### `postgresql-timescaledb-lab`
 
 PostgreSQL and Tiger Data / TimescaleDB hands-on exercises covering hypertables, chunks, execution plans, Hypercore, compression, and continuous aggregates.
